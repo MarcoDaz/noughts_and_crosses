@@ -24,15 +24,21 @@ I need the board to recognise if there is winner or draw
 
 Include the name of the method, it's parameters, return value, and side effects.
 
+
+
+
 ```ruby
 class Board #Holds the board information
-    def initialize
+    def initialize(io = Kernel)
+        @io
         @board = ['1','2','3','4','5','6','7','8','9']
         @player = "O"
         @computer = "X"
     end
 
-    def 
+    def print
+        # returns the board formatted
+    end
 
 
     def check_for_winner(Board)
@@ -69,6 +75,16 @@ class Board #Holds the board information
 
     def computer_input
         #Computer plays their icon in a randomised, free location
+    end
+
+    def run # @io
+        # 1) Show board
+        # 2) Ask player for location
+        # 3) Update board icon at that location
+        # 4) Check board for a winner or draw
+        # 5) If not computer plays
+        # 6) Check board for a winner or draw ? Winner || Draw : false
+        # 7) If not loop 2 - 6
     end
 end
 
