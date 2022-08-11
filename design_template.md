@@ -25,8 +25,82 @@ I need the board to recognise if there is winner or draw
 Include the name of the method, it's parameters, return value, and side effects.
 
 ```ruby
-class Board 
+class Board #Holds the board information
+    def initialize
+        @board = ['1','2','3','4','5','6','7','8','9']
+        @player = "O"
+        @computer = "X"
+    end
 
+    def 
+
+
+    def check_for_winner(Board)
+    #Create variables to show potential winning patterns
+    row1 = @board[0..2]
+    row2 = @board[3..5]
+    row3 = 
+    diag1 = 
+    diag2
+    colm1
+    colm2
+    colm3
+    winning_options = [[row1],[row2]...]
+    #Iterate through each winning variable, check if the board matches any of these with noughts or crosses
+    winning_options.each{|winners| winners.all?("O")}
+    winning_options.each{|winners| winners.all?("X")}
+    #Return winner if so
+    end
+
+
+    def update(location, player)
+        #Change the location for the player's icon or computer's
+        #Print out the board again
+        #Check if there is a winner
+    end
+
+    def is_there_a_winner
+        #Checks board for three equal icons in a row/column/diagonal
+    end
+
+    def player_input
+        #gets for player input, with their chosen play location
+    end
+
+    def computer_input
+        #Computer plays their icon in a randomised, free location
+    end
+end
+
+
+
+
+
+
+
+ 1 | 2 | 3
+ ----------
+ 4 | 5 | 6
+ ----------
+ 7 | 8 | 9
+
+ board = ['1','2'...,'9']
+
+ if 1,2,3.include "X" = Player wins
+
+ #Choose your first place to play your naught
+ 1 | 2 | 3
+ ----------
+ 4 | 5 | 6
+ ----------
+ 7 | 8 | 9
+ gets.chomp => "1"
+
+ board.update(location, player)
+    board[location-1] = player.icon
+
+    
+ 
 ```
 
 
