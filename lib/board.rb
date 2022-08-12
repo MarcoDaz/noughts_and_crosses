@@ -8,6 +8,7 @@ class Board
     end
 
     def player_input
+        puts "Please choose a place to play your nought:"
         location = @io.gets.chomp.to_i
         @board[location - 1] == "X" || @board[location - 1] == "O" ? @io.puts("Stop cheating!") : @board[location - 1] = 'O'
     end
@@ -22,6 +23,7 @@ class Board
         while @board[location] == "X" || @board[location] == "O"
             location = @io.rand(9)
         end
+        puts "The computer played at location #{location+1}:"
         @board[location] = 'X'
     end
 
@@ -54,8 +56,11 @@ class Board
             check_for_winner
             break if turn_count == 9
         end
-        @winner ? puts("#{@winner} has won!") : puts("It's a draw! Please play again")
+        if @winner
+            @winner == "Player" ? puts("You have won, congratulations!") : puts("The computer has won, good try - better luck next time.")
+        else
+            puts "It is a draw, please play again."
+        end
     end
 end
-board = Board.new
-board.run
+
