@@ -1,7 +1,7 @@
 require 'board'
 require 'Board_reader'
 # require 'GameLogic'
-# require 'input'
+require 'input'
 # require 'UI'
 
 RSpec.describe "Integration tests" do
@@ -19,7 +19,7 @@ RSpec.describe "Integration tests" do
         end
     end
     describe Input do
-        it "takes play input and updates board array with icon" do
+        it 'takes play input and updates board array with icon' do
             # As a player
             # To play noughts and crosses
             # I need to be able to make moves (update board)
@@ -42,16 +42,15 @@ RSpec.describe "Integration tests" do
 
             io = double(:io)
             expect(io).to receive(:gets).and_return("1")
+            expect(io).to receive(:rand).with(9).and_return(1)
 
             board = Board.new
             input = Input.new(io)
             input.player(board)
-            input.computer(board)
-                #random number check
-                #board.update(location, X)
+            input.computer(board, io)
 
             result = board.board_arr
-            expect(result).to eq ["O",2,3,4,5,6,7,8,9]
+            expect(result).to eq ["O","X",3,4,5,6,7,8,9]
         end
     end
 end
