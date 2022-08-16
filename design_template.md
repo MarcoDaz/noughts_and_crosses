@@ -29,12 +29,27 @@ Include the name of the method, it's parameters, return value, and side effects.
 
 ```ruby
 class Board #Holds the board information
-    def initialize(io = Kernel)
-        @io
+    def initialize
         @board = ['1','2','3','4','5','6','7','8','9']
-        @player = "O"
-        @computer = "X"
     end
+end
+
+
+class GameLogic
+    def initialize()
+        @winner = false
+    end
+end
+
+
+
+class UI
+    def initialize(io = Kernel)
+
+    end
+end
+
+
 
     def print
         # returns the board formatted
@@ -78,13 +93,14 @@ class Board #Holds the board information
     end
 
     def run # @io
-        # 1) Show board
-        # 2) Ask player for location
-        # 3) Update board icon at that location
-        # 4) Check board for a winner or draw
-        # 5) If not computer plays
-        # 6) Check board for a winner or draw ? Winner || Draw : false
-        # 7) If not loop 2 - 6
+        # 0) Initiate with board
+        #UI 1) Board displayer
+        #UI 2) Ask player for location => player
+        #Board 3) Update board icon at that location
+        #Logic 4) Check board for a winner or draw
+        #Logic 5) If not computer plays
+        #Logic 6) Check board for a winner or draw ? Winner || Draw : false
+        #Wombocombo 7) If not loop 2 - 6
     end
 end
 
