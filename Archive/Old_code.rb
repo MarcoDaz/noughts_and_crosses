@@ -29,7 +29,6 @@
     end
 
     def check_for_winner
-
         row1 = @board[0..2]
         row2 = @board[3..5]
         row3 = @board[6..8]
