@@ -9,6 +9,9 @@ class Input
     if board.board_arr[location_index] == "X" || board.board_arr[location_index] == "O"
       @io.puts "Your chosen location has already been played, play again!"
       player(board)
+    elsif location_index < 0 || location_index > 8
+      @io.puts "Your input location is not valid"
+      player(board)
     end
     board.update(location_index, 'O')
   end
