@@ -6,9 +6,9 @@ class Input
   def player(board)
     @io.puts "Please choose a place to play your nought:"
     location_index = @io.gets.chomp.to_i - 1
-    while board.board_arr[location_index] == "X" || board.board_arr[location_index] == "O"
+    if board.board_arr[location_index] == "X" || board.board_arr[location_index] == "O"
       @io.puts "Your chosen location has already been played, play again!"
-      player
+      player(board)
     end
     board.update(location_index, 'O')
   end
